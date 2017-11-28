@@ -51,6 +51,13 @@
                     return {width: percentString()};
                 };
                 /*
+                *@func scope.thumbStyle
+                *@desc returns the placement of the thumb based on calculated percent
+                */
+                scope.thumbStyle = function () {
+                    return {left: percentString()};
+                };
+                /*
                 *@desc updates the seek bar value based on the seek bar's width and the location of the users click on the seek bar
                 */
                 scope.onClickSeekBar = function(event) {
@@ -61,9 +68,10 @@
                 scope.trackThumb = function() {
                     $document.bind('mousemove.thumb', function(event) {
                         var percent = calculatePercent (seekBar, event);
-                        scope.$apply(function() {
+                            scope.$apply(function() {
                             scope.value = percent * scope.max;
                         });
+                        
                 });
                     $document.bind('mouseup.thumb', function() {
                         $document.unbind('mousemove.thumb');
