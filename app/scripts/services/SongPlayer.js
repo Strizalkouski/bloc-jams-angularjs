@@ -2,24 +2,24 @@
   function SongPlayer($rootScope, Fixtures) {
     /**
     *@desc songPlayer object
-    *@type {Object}
+    *@type Object
     */
     var SongPlayer = {};
       
     /**
     *@desc Current Album
-    *@type {Object}
+    *@type Object
     */
     var currentAlbum = Fixtures.getAlbum();
     /**
     *@desc Buzz object audio file
-    *@type {Object}
+    *@type Object
     */
       
     var currentBuzzObject = null;
     /**  
     *@desc Current Song Object
-    *@type {Object}
+    *@type Object
     */
     
      function playSong (song) {
@@ -34,7 +34,7 @@
       
     /**
     *@desc Song Index
-    *@type {Object}
+    *@type Object
     */
       
     var getSongIndex = function(song) {
@@ -44,7 +44,7 @@
         /**
     *@function setSong
     *@desc Stops currently playing song and loads new audio file as currentBuzzObject
-    *@PARAM {Object} song
+    *@PARAM Object song
     */
     var setSong = function(song) {
       if (currentBuzzObject) {
@@ -67,12 +67,12 @@
     
     /**
     * @desc Active song object from list of songs
-    * @type {Object}
+    * @type Object
     */
     SongPlayer.currentSong = null;
     /**
     *@desc Current playback time in second of currently playing song
-    *@type {Number}
+    *@type Number
     */
       SongPlayer.currentTime = null;
       SongPlayer.volume = null;
@@ -80,7 +80,7 @@
     /**
     * @function Play
     * @desc Play current or new song
-    * @param {Object} song
+    * @param Object song
     */
     SongPlayer.play = function(song) {
         song = song || SongPlayer.currentSong;
@@ -97,7 +97,7 @@
     /**
     * @function pause
     * @desc Pause current song
-    * @param {Object} song
+    * @param Object song
     */
      SongPlayer.pause = function(song){
         song = song || SongPlayer.currentSong;
@@ -108,7 +108,7 @@
     /**
     *@function previous
     *@desc go to previous song
-    *@param {Object} index
+    *@param Object index
     */
     SongPlayer.previous = function () {
         var currentSongIndex = getSongIndex(SongPlayer.currentSong);
@@ -139,7 +139,7 @@
     /**
     *@function setCurrentTime
     *@desc Set current time in second of currently playing song
-    *@param {Number} time
+    *@param Number time
     */
     SongPlayer.setCurrentTime = function(time) {
         if (currentBuzzObject) {
